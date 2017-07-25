@@ -1,16 +1,22 @@
 import React from 'react';
-import logo from './logo.svg';
-import './App.css';
+import styled from 'styled-components';
 
-const App = () =>
-  (<div className="App">
-    <div className="App-header">
-      <img src={logo} className="App-logo" alt="logo" />
-      <h2>Welcome to React</h2>
-    </div>
-    <p className="App-intro">
-      To get started, edit <code>src/App.js</code> and save to reload.
-    </p>
-  </div>);
+import MuiThemeProvider from 'material-ui/styles/MuiThemeProvider';
+import AppBar from 'material-ui/AppBar';
+
+const App = () => {
+  const AppContainer = styled.div`height: 100%;`;
+
+  return (
+    <MuiThemeProvider>
+      <AppContainer>
+        {/* Header */}
+        <AppBar title="Buymart" />
+        {/* Content */}
+        <p>TODO</p>
+      </AppContainer>
+    </MuiThemeProvider>
+  );
+};
 
 export default App;
