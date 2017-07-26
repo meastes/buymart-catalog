@@ -5,11 +5,14 @@ import Catalog from '../../scenes/Market/Catalog';
 import ShippingForm from '../../scenes/Market/ShippingForm';
 import ThankYou from '../../scenes/Market/ThankYou';
 
-export default () =>
+const ProductRoute = ({ component: Component, products, ...rest }) =>
+  <Route {...rest} render={props => <Component products={products} {...props} />} />;
+
+export default props =>
   (<div>
     <Route exact path="/" render={() => <Redirect to="/market/catalog" />} />
     <Route exact path="/market" render={() => <Redirect to="/market/catalog" />} />
-    <Route path="/market/catalog" component={Catalog} />
-    <Route path="/market/shipping" component={ShippingForm} />
+    <ProductRoute path="/market/catalog" component={Catalog} products={props.products} />
+    <Route path="/market/shipping/:id" component={ShippingForm} />
     <Route path="/market/thanks" component={ThankYou} />
   </div>);

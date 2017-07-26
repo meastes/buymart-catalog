@@ -1,4 +1,5 @@
 import React from 'react';
+import { withRouter } from 'react-router';
 import styled from 'styled-components';
 
 import RaisedButton from 'material-ui/RaisedButton';
@@ -25,20 +26,27 @@ const BuyButton = styledMaterial(RaisedButton)`
   bottom: 10px;
 `;
 
-const CatalogItem = props =>
-  (<ItemContainer name={props.name}>
-    <PriceContainer>
-      {props.price}
-    </PriceContainer>
-    <FeatureList>
-      {props.features &&
-        props.features.map(feature =>
-          (<li key={feature}>
-            {feature}
-          </li>),
-        )}
-    </FeatureList>
-    <BuyButton label="Buy" primary />
-  </ItemContainer>);
+const CatalogItem = (props) => {
+  const { product, history } = props;
 
-export default CatalogItem;
+  const onBuyClick = () => history.push({ pathname: `/market/shipping/${product.sku}` });
+
+  return (
+    <ItemContainer name={props.name}>
+      <PriceContainer>
+        {product.price}
+      </PriceContainer>
+      <FeatureList>
+        {product.features &&
+          product.features.map(feature =>
+            (<li key={feature}>
+              {feature}
+            </li>),
+          )}
+      </FeatureList>
+      <BuyButton label="Buy" primary onTouchTap={onBuyClick} />
+    </ItemContainer>
+  );
+};
+
+export default withRouter(CatalogItem);

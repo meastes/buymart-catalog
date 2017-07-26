@@ -10,6 +10,28 @@ import Navigation from './components/Navigation';
 
 const NAVIGATION_ITEMS = [{ title: 'Home' }, { title: 'Market', active: true }, { title: 'Help' }];
 
+// TODO move to API call
+const products = [
+  {
+    name: 'Table',
+    sku: '00185316',
+    price: '$100.00',
+    features: ['wooden', 'tall', 'sturdy'],
+  },
+  {
+    name: 'Chair',
+    sku: '00185317',
+    price: '$50.00',
+    features: ['wooden', 'black'],
+  },
+  {
+    name: 'Rug',
+    sku: '00185318',
+    price: '$80.00',
+    features: ['mosaic', 'large'],
+  },
+];
+
 class App extends Component {
   constructor() {
     super();
@@ -35,7 +57,7 @@ class App extends Component {
           <AppContainer>
             <Header onRequestOpen={this.openNavigation} />
             <Navigation items={NAVIGATION_ITEMS} open={this.state.navigationOpen} onRequestClose={this.closeNavigation} />
-            <Routes />
+            <Routes products={products} />
           </AppContainer>
         </Router>
       </MuiThemeProvider>

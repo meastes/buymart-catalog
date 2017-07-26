@@ -6,27 +6,6 @@ import config from '../../../config';
 import HorizontalList from '../../../components/HorizontalList';
 import CatalogItem from './components/CatalogItem';
 
-const products = [
-  {
-    name: 'Table',
-    sku: '00185316',
-    price: '$100.00',
-    features: ['wooden', 'tall', 'sturdy'],
-  },
-  {
-    name: 'Chair',
-    sku: '00185317',
-    price: '$50.00',
-    features: ['wooden', 'black'],
-  },
-  {
-    name: 'Rug',
-    sku: '00185318',
-    price: '$80.00',
-    features: ['mosaic', 'large'],
-  },
-];
-
 const PageContainer = styled.div`
   margin-top: ${config.spacing.THREE};
   margin-bottom: ${config.spacing.THREE};
@@ -56,21 +35,24 @@ const ItemWrapper = styled.div`
   }
 `;
 
-// TODO Fix responsive - card displays weird when stacked
-const productListItems = products.map(product =>
-  (<HorizontalList.Item key={product.sku}>
-    <ItemWrapper>
-      <CatalogItem name={product.name} price={product.price} features={product.features} />
-    </ItemWrapper>
-  </HorizontalList.Item>),
-);
+export default (props) => {
+  // TODO Fix responsive - card displays weird when stacked
+  const productListItems = props.products.map(product =>
+    (<HorizontalList.Item key={product.sku}>
+      <ItemWrapper>
+        <CatalogItem product={product} />
+      </ItemWrapper>
+    </HorizontalList.Item>),
+  );
 
-export default () =>
-  (<PageContainer>
-    <ProductsContainer>
-      <HorizontalList spacing={config.spacing.TWO}>
-        {productListItems}
-      </HorizontalList>
-    </ProductsContainer>
-    <p>All products come with a 30-day money back guarantee</p>
-  </PageContainer>);
+  return (
+    <PageContainer>
+      <ProductsContainer>
+        <HorizontalList spacing={config.spacing.TWO}>
+          {productListItems}
+        </HorizontalList>
+      </ProductsContainer>
+      <p>All products come with a 30-day money back guarantee</p>
+    </PageContainer>
+  );
+};
