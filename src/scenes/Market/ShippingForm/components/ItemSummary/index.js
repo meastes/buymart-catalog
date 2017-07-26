@@ -2,6 +2,7 @@ import React from 'react';
 import styled from 'styled-components';
 
 import config from '../../../../../config';
+import { formatDollars } from '../../../../../util/formatters';
 
 import ItemContainer from '../../../../../components/ItemContainer';
 import VerticalList from '../../../../../components/VerticalList';
@@ -16,16 +17,16 @@ const ItemSummary = props =>
     <PriceContainer>
       <VerticalList>
         <VerticalList.Item>
-          Price: {props.price}
+          Price: {formatDollars(props.price)}
         </VerticalList.Item>
         <VerticalList.Item>
-          Shipping & Handling: {props.shipping}
+          Shipping & Handling: {formatDollars(props.shipping)}
         </VerticalList.Item>
         <VerticalList.Item>
           <hr />
         </VerticalList.Item>
         <VerticalList.Item>
-          Total: {props.total}
+          Total: {formatDollars(props.total)}
         </VerticalList.Item>
       </VerticalList>
     </PriceContainer>

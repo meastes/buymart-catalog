@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { Component } from 'react';
 import styled from 'styled-components';
 
 import config from '../../../config';
@@ -7,41 +7,46 @@ import HorizontalList from '../../../components/HorizontalList';
 import ItemSummary from './components/ItemSummary';
 import ShippingInfoForm from './components/ShippingInfoForm';
 
-const product = {
-  name: 'Table',
-  price: '$100.00',
-  shipping: '$5.00',
-  total: '$105.00',
-};
+const PageContainer = styled.div`
+  margin-top: ${config.spacing.THREE};
+  margin-bottom: ${config.spacing.THREE};
+`;
 
-export default () => {
-  const PageContainer = styled.div`
-    margin-top: ${config.spacing.THREE};
-    margin-bottom: ${config.spacing.THREE};
-  `;
+const SummaryFormContainer = styled.div`
+  margin-top: ${config.spacing.TWO};
+  margin-bottom: ${config.spacing.TWO};
 
-  const SummaryFormContainer = styled.div`
-    margin-top: ${config.spacing.TWO};
-    margin-bottom: ${config.spacing.TWO};
+  & > ul {
+    display: flex;
+    justify-content: center;
+  }
+`;
 
-    & > ul {
-      display: flex;
-      justify-content: center;
-    }
-  `;
+export default class ShippingForm extends Component {
+  constructor(props) {
+    super(props);
 
-  return (
-    <PageContainer>
-      <SummaryFormContainer>
-        <HorizontalList spacing={config.spacing.TWO}>
-          <HorizontalList.Item>
-            <ItemSummary name={product.name} price={product.price} shipping={product.shipping} total={product.total} />
-          </HorizontalList.Item>
-          <HorizontalList.Item>
-            <ShippingInfoForm />
-          </HorizontalList.Item>
-        </HorizontalList>
-      </SummaryFormContainer>
-    </PageContainer>
-  );
-};
+    const { match, products } = props;
+    const { sku } = match.params;
+
+    this.product = products.find(product => product.sku === sku);
+  }
+  render() {
+    const { product } = this;
+
+    return (
+      <PageContainer>
+        <SummaryFormContainer>
+          <HorizontalList spacing={config.spacing.TWO}>
+            <HorizontalList.Item>
+              <ItemSummary name={product.name} price={product.price} shipping={12} total={product.price + 12} />
+            </HorizontalList.Item>
+            <HorizontalList.Item>
+              <ShippingInfoForm />
+            </HorizontalList.Item>
+          </HorizontalList>
+        </SummaryFormContainer>
+      </PageContainer>
+    );
+  }
+}

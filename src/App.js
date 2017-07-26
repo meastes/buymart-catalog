@@ -15,19 +15,19 @@ const products = [
   {
     name: 'Table',
     sku: '00185316',
-    price: '$100.00',
+    price: 100,
     features: ['wooden', 'tall', 'sturdy'],
   },
   {
     name: 'Chair',
     sku: '00185317',
-    price: '$50.00',
+    price: 50,
     features: ['wooden', 'black'],
   },
   {
     name: 'Rug',
     sku: '00185318',
-    price: '$80.00',
+    price: 80,
     features: ['mosaic', 'large'],
   },
 ];

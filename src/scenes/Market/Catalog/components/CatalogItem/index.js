@@ -1,10 +1,11 @@
-import React from 'react';
-import { withRouter } from 'react-router';
+import React, { Component } from 'react';
+import { withRouter } from 'react-router-dom';
 import styled from 'styled-components';
 
 import RaisedButton from 'material-ui/RaisedButton';
 
 import config from '../../../../../config';
+import { formatDollars } from '../../../../../util/formatters';
 import styledMaterial from '../../../../../util/styledMaterial';
 
 import ItemContainer from '../../../../../components/ItemContainer';
@@ -26,27 +27,32 @@ const BuyButton = styledMaterial(RaisedButton)`
   bottom: 10px;
 `;
 
-const CatalogItem = (props) => {
-  const { product, history } = props;
+class CatalogItem extends Component {
+  onBuyClick = () => {
+    const { product, history } = this.props;
+    history.push({ pathname: `/market/shipping/${product.sku}` });
+  };
 
-  const onBuyClick = () => history.push({ pathname: `/market/shipping/${product.sku}` });
+  render() {
+    const { product } = this.props;
 
-  return (
-    <ItemContainer name={props.name}>
-      <PriceContainer>
-        {product.price}
-      </PriceContainer>
-      <FeatureList>
-        {product.features &&
-          product.features.map(feature =>
-            (<li key={feature}>
-              {feature}
-            </li>),
-          )}
-      </FeatureList>
-      <BuyButton label="Buy" primary onTouchTap={onBuyClick} />
-    </ItemContainer>
-  );
-};
+    return (
+      <ItemContainer name={product.name}>
+        <PriceContainer>
+          {formatDollars(product.price)}
+        </PriceContainer>
+        <FeatureList>
+          {product.features &&
+            product.features.map(feature =>
+              (<li key={feature}>
+                {feature}
+              </li>),
+            )}
+        </FeatureList>
+        <BuyButton label="Buy" primary onTouchTap={this.onBuyClick} />
+      </ItemContainer>
+    );
+  }
+}
 
 export default withRouter(CatalogItem);
