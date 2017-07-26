@@ -1,10 +1,10 @@
 import React from 'react';
 import styled from 'styled-components';
 
+const Item = styled.li`display: block;`;
+
 const ListItem = (props) => {
   const { children } = props;
-
-  const Item = styled.li`display: block;`;
 
   return (
     <Item>

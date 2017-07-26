@@ -5,17 +5,17 @@ import config from '../../config';
 
 import _ListItem from './_ListItem';
 
+const List = styled.ul`
+  & > li + li {
+    margin-left: ${props => props.spacing};
+  }
+`;
+
 const HorizontalList = (props) => {
   const { spacing, children } = props;
 
-  const List = styled.ul`
-    & > li + li {
-      margin-left: ${spacing};
-    }
-  `;
-
   return (
-    <List>
+    <List spacing={spacing}>
       {children}
     </List>
   );

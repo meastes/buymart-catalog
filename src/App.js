@@ -32,6 +32,8 @@ const products = [
   },
 ];
 
+const AppContainer = styled.div`height: 100%;`;
+
 class App extends Component {
   constructor() {
     super();
@@ -49,8 +51,6 @@ class App extends Component {
   };
 
   render() {
-    const AppContainer = styled.div`height: 100%;`;
-
     return (
       <MuiThemeProvider>
         <Router>
