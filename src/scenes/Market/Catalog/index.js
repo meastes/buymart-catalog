@@ -46,8 +46,10 @@ const ProductsContainer = styled.div`
 
 const ItemWrapper = styled.div`
   height: 100%;
+  padding-bottom: ${config.spacing.THREE};
 
   & > * {
+    position: relative;
     height: 100%;
   }
 `;

@@ -4,6 +4,7 @@ import styled from 'styled-components';
 import RaisedButton from 'material-ui/RaisedButton';
 
 import config from '../../../../../config';
+import styledMaterial from '../../../../../util/styledMaterial';
 
 import ItemContainer from '../../../../../components/ItemContainer';
 
@@ -16,6 +17,12 @@ const FeatureList = styled.ul`
   font-size: 16pt;
   text-align: left;
   list-style: disc inside none;
+`;
+
+const BuyButton = styledMaterial(RaisedButton)`
+  position: absolute;
+  left: 55px;
+  bottom: 10px;
 `;
 
 const CatalogItem = props =>
@@ -31,7 +38,7 @@ const CatalogItem = props =>
           </li>),
         )}
     </FeatureList>
-    <RaisedButton label="Buy" primary />
+    <BuyButton label="Buy" primary />
   </ItemContainer>);
 
 export default CatalogItem;
