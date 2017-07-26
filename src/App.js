@@ -10,11 +10,13 @@ import Catalog from './scenes/Market/Catalog';
 const App = () => {
   const AppContainer = styled.div`height: 100%;`;
 
+  const navigationItems = [{ title: 'Home' }, { title: 'Market', active: true }, { title: 'Help' }];
+
   return (
     <MuiThemeProvider>
       <AppContainer>
         <Header />
-        <Navigation open={false} />
+        <Navigation items={navigationItems} />
         {/* Hardcode Catalog until routing is implemented */}
         <Catalog />
       </AppContainer>
