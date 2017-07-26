@@ -1,6 +1,8 @@
 import React from 'react';
 import styled from 'styled-components';
 
+import config from '../../config';
+
 import _ListItem from './_ListItem';
 
 const HorizontalList = (props) => {
@@ -20,7 +22,7 @@ const HorizontalList = (props) => {
 };
 
 HorizontalList.defaultProps = {
-  spacing: '12px',
+  spacing: config.spacing.ONE,
 };
 
 HorizontalList.Item = _ListItem;
