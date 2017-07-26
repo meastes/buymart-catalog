@@ -21,7 +21,7 @@ const FeatureList = styled.ul`
 
 const BuyButton = styledMaterial(RaisedButton)`
   position: absolute;
-  left: 55px;
+  left: 58px;
   bottom: 10px;
 `;
 
