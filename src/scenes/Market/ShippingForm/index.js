@@ -18,6 +18,8 @@ const SummaryFormContainer = styled.div`
 
   & > ul {
     display: flex;
+    flex-flow: row;
+    flex-wrap: wrap;
     justify-content: center;
   }
 `;
@@ -34,6 +36,7 @@ export default class ShippingForm extends Component {
   render() {
     const { product } = this;
 
+    // TODO Fix responsive - card displays weird when stacked
     return (
       <PageContainer>
         <SummaryFormContainer>
