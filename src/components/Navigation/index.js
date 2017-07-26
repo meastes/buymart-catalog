@@ -15,8 +15,8 @@ const NavItem = styledMaterial(MenuItem, ['active'])`
   background-color: ${styleProps => (styleProps.active ? 'lightblue' : 'white')} !important;
 `;
 
-export default () =>
-  (<Navigation open>
+export default props =>
+  (<Navigation open={props.open}>
     <NavItem>Home</NavItem>
     <NavItem active>Market</NavItem>
     <NavItem>Help</NavItem>

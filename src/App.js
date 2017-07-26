@@ -2,8 +2,10 @@ import React from 'react';
 import styled from 'styled-components';
 import MuiThemeProvider from 'material-ui/styles/MuiThemeProvider';
 
-import Header from './components/presentation/Header';
-import Navigation from './components/presentation/Navigation';
+import Header from './components/Header';
+import Navigation from './components/Navigation';
+
+import Catalog from './scenes/Market/Catalog';
 
 const App = () => {
   const AppContainer = styled.div`height: 100%;`;
@@ -12,8 +14,9 @@ const App = () => {
     <MuiThemeProvider>
       <AppContainer>
         <Header />
-        <Navigation />
-        <p>TODO</p>
+        <Navigation open={false} />
+        {/* Hardcode Catalog until routing is implemented */}
+        <Catalog />
       </AppContainer>
     </MuiThemeProvider>
   );
