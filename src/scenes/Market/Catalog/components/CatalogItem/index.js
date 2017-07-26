@@ -26,7 +26,7 @@ const CatalogItem = props =>
     <FeatureList>
       {props.features &&
         props.features.map(feature =>
-          (<li>
+          (<li key={feature}>
             {feature}
           </li>),
         )}

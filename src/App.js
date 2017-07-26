@@ -6,6 +6,7 @@ import Header from './components/Header';
 import Navigation from './components/Navigation';
 
 import Catalog from './scenes/Market/Catalog';
+import ShippingForm from './scenes/Market/ShippingForm';
 
 const App = () => {
   const AppContainer = styled.div`height: 100%;`;
@@ -17,8 +18,9 @@ const App = () => {
       <AppContainer>
         <Header />
         <Navigation items={navigationItems} />
-        {/* Hardcode Catalog until routing is implemented */}
+        {/* Hardcode both scenes until routing is implemented */}
         <Catalog />
+        <ShippingForm />
       </AppContainer>
     </MuiThemeProvider>
   );
