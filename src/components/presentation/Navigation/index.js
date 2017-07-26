@@ -1,18 +1,19 @@
 import React from 'react';
-import styled from 'styled-components';
 
 import Drawer from 'material-ui/Drawer';
 import MenuItem from 'material-ui/MenuItem';
 
-const Navigation = styled(Drawer)`
+import styledMaterial from '../../util/styledMaterial';
+
+const Navigation = styledMaterial(Drawer)`
     & > div {
       top: 64px !important;
     }
   `;
 
-const NavItem = styled(MenuItem)`
-    background-color: ${styleProps => (styleProps.active ? 'lightblue' : 'white')} !important;
-  `;
+const NavItem = styledMaterial(MenuItem, ['active'])`
+  background-color: ${styleProps => (styleProps.active ? 'lightblue' : 'white')} !important;
+`;
 
 export default () =>
   (<Navigation open>
