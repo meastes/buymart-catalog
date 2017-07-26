@@ -5,12 +5,6 @@ import MenuItem from 'material-ui/MenuItem';
 
 import styledMaterial from '../../util/styledMaterial';
 
-const NavigationBar = styledMaterial(Drawer)`
-    & > div {
-      top: 64px !important;
-    }
-  `;
-
 const NavItem = styledMaterial(MenuItem, ['active'])`
   background-color: ${styleProps => (styleProps.active ? 'lightblue' : 'white')} !important;
 `;
@@ -22,9 +16,9 @@ const Navigation = (props) => {
     </NavItem>),
   );
   return (
-    <NavigationBar open={props.open}>
+    <Drawer docked={false} open={props.open} onRequestChange={props.onRequestClose}>
       {navItems}
-    </NavigationBar>
+    </Drawer>
   );
 };
 
