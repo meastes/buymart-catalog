@@ -10,7 +10,7 @@ import ItemContainer from '../../../../../components/ItemContainer';
 
 const PriceContainer = styled.div`
   font-size: 14pt;
-  margin-bottom: ${config.spacing.ONE};
+  margin-bottom: ${config.spacing.TWO};
 `;
 
 const FeatureList = styled.ul`
