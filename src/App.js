@@ -7,6 +7,7 @@ import Navigation from './components/Navigation';
 
 import Catalog from './scenes/Market/Catalog';
 import ShippingForm from './scenes/Market/ShippingForm';
+import ThankYou from './scenes/Market/ThankYou';
 
 const App = () => {
   const AppContainer = styled.div`height: 100%;`;
@@ -17,10 +18,11 @@ const App = () => {
     <MuiThemeProvider>
       <AppContainer>
         <Header />
-        <Navigation items={navigationItems} />
+        <Navigation items={navigationItems} open />
         {/* Hardcode both scenes until routing is implemented */}
         <Catalog />
         <ShippingForm />
+        <ThankYou />
       </AppContainer>
     </MuiThemeProvider>
   );
