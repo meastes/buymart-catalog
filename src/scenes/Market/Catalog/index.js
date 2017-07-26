@@ -54,6 +54,7 @@ const ItemWrapper = styled.div`
   }
 `;
 
+// TODO Fix responsive - table cell?
 const productListItems = products.map(product =>
   (<HorizontalList.Item key={product.sku}>
     <ItemWrapper>

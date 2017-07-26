@@ -5,6 +5,7 @@ import config from '../../../config';
 
 import HorizontalList from '../../../components/HorizontalList';
 import ItemSummary from './components/ItemSummary';
+import ShippingInfoForm from './components/ShippingInfoForm';
 
 const product = {
   name: 'Table',
@@ -35,6 +36,9 @@ export default () => {
         <HorizontalList spacing={config.spacing.TWO}>
           <HorizontalList.Item>
             <ItemSummary name={product.name} price={product.price} shipping={product.shipping} total={product.total} />
+          </HorizontalList.Item>
+          <HorizontalList.Item>
+            <ShippingInfoForm />
           </HorizontalList.Item>
         </HorizontalList>
       </SummaryFormContainer>
