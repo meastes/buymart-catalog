@@ -40,6 +40,8 @@ const ProductsContainer = styled.div`
 
   & > ul {
     display: flex;
+    flex-flow: row;
+    flex-wrap: wrap;
     justify-content: center;
   }
 `;
@@ -54,7 +56,7 @@ const ItemWrapper = styled.div`
   }
 `;
 
-// TODO Fix responsive - table cell?
+// TODO Fix responsive - card displays weird when stacked
 const productListItems = products.map(product =>
   (<HorizontalList.Item key={product.sku}>
     <ItemWrapper>
