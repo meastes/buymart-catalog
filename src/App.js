@@ -30,7 +30,6 @@ class App extends Component {
   render() {
     const AppContainer = styled.div`height: 100%;`;
 
-    // TODO wire up hamburger button
     return (
       <MuiThemeProvider>
         <AppContainer>
