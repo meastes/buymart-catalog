@@ -6,13 +6,6 @@ import config from '../../../config';
 import HorizontalList from '../../../components/HorizontalList';
 import CatalogItem from './components/CatalogItem';
 
-const PageContainer = styled.div`
-  margin-top: ${config.spacing.THREE};
-  margin-bottom: ${config.spacing.THREE};
-
-  text-align: center;
-`;
-
 const products = [
   {
     name: 'Table',
@@ -34,15 +27,45 @@ const products = [
   },
 ];
 
+const PageContainer = styled.div`
+  margin-top: ${config.spacing.THREE};
+  margin-bottom: ${config.spacing.THREE};
+
+  text-align: center;
+`;
+
+const ProductsContainer = styled.div`
+  margin-top: ${config.spacing.TWO};
+  margin-bottom: ${config.spacing.TWO};
+
+  & > ul {
+    display: flex;
+    justify-content: center;
+  }
+`;
+
+const ItemWrapper = styled.div`
+  height: 100%;
+
+  & > * {
+    height: 100%;
+  }
+`;
+
 const productListItems = products.map(product =>
   (<HorizontalList.Item key={product.sku}>
-    <CatalogItem name={product.name} price={product.price} features={product.features} />
+    <ItemWrapper>
+      <CatalogItem name={product.name} price={product.price} features={product.features} />
+    </ItemWrapper>
   </HorizontalList.Item>),
 );
 
 export default () =>
   (<PageContainer>
-    <HorizontalList spacing={config.spacing.TWO}>
-      {productListItems}
-    </HorizontalList>
+    <ProductsContainer>
+      <HorizontalList spacing={config.spacing.TWO}>
+        {productListItems}
+      </HorizontalList>
+    </ProductsContainer>
+    <p>All products come with a 30-day money back guarantee</p>
   </PageContainer>);
