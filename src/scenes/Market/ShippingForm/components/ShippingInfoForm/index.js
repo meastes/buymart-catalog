@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { Component } from 'react';
 import styled from 'styled-components';
 import { Card, CardText } from 'material-ui/Card';
 import TextField from 'material-ui/TextField';
@@ -27,30 +27,53 @@ const TextFieldList = styled.div`
 
 const ButtonWrapper = styled.div`text-align: right;`;
 
-export default () =>
-  (<Card>
-    <CardText>
-      <VerticalList>
-        <VerticalList.Item>
-          <ShippingTextField hintText="Name" />
-        </VerticalList.Item>
-        <VerticalList.Item>
-          <ShippingTextField hintText="Street" />
-        </VerticalList.Item>
-        <VerticalList.Item>
-          <TextFieldList>
-            <ShippingTextField hintText="City" long />
-            <ShippingTextField hintText="State" short />
-          </TextFieldList>
-        </VerticalList.Item>
-        <VerticalList.Item>
-          <ShippingTextField hintText="Zip Code" />
-        </VerticalList.Item>
-        <VerticalList.Item>
-          <ButtonWrapper>
-            <RaisedButton label="Confirm" primary />
-          </ButtonWrapper>
-        </VerticalList.Item>
-      </VerticalList>
-    </CardText>
-  </Card>);
+export default class ShippingInfoForm extends Component {
+  constructor(props) {
+    super(props);
+
+    this.state = {
+      usStateValue: '',
+    };
+  }
+
+  onChange = (event, newText) => {
+    this.setState({ usStateValue: newText });
+    this.props.onUsStateChange(newText);
+  };
+
+  render() {
+    const { usStateValue } = this.state;
+
+    // TODO handle enter being pressed
+    return (
+      <Card>
+        <CardText>
+          <form>
+            <VerticalList>
+              <VerticalList.Item>
+                <ShippingTextField hintText="Name" />
+              </VerticalList.Item>
+              <VerticalList.Item>
+                <ShippingTextField hintText="Street" />
+              </VerticalList.Item>
+              <VerticalList.Item>
+                <TextFieldList>
+                  <ShippingTextField hintText="City" long />
+                  <ShippingTextField hintText="State" short onChange={this.onChange} value={usStateValue} />
+                </TextFieldList>
+              </VerticalList.Item>
+              <VerticalList.Item>
+                <ShippingTextField hintText="Zip Code" />
+              </VerticalList.Item>
+              <VerticalList.Item>
+                <ButtonWrapper>
+                  <RaisedButton label="Confirm" primary onTouchTap={this.props.onFormSubmit} />
+                </ButtonWrapper>
+              </VerticalList.Item>
+            </VerticalList>
+          </form>
+        </CardText>
+      </Card>
+    );
+  }
+}
