@@ -10,6 +10,7 @@ const NavItem = styledMaterial(MenuItem, ['active'])`
 `;
 
 const Navigation = (props) => {
+  // TODO add hrefs
   const navItems = props.items.map(item =>
     (<NavItem key={item.title} active={item.active}>
       {item.title}
