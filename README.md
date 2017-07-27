@@ -24,7 +24,7 @@ styled-components is React library for writing CSS in JavaScript. The syntax all
 
 ## Design Choices
 
-## Language
+### Language
 This project utilizes the ES2016 language standard, using the preset from `create-react-app`. In general, components are built using a functional approach - stateless React components are used when possible. These components are easy to read and maintain.
 
 ### File Structure
