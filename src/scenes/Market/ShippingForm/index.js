@@ -10,8 +10,8 @@ import ItemSummary from './components/ItemSummary';
 import ShippingInfoForm from './components/ShippingInfoForm';
 
 const PageContainer = styled.div`
-  margin-top: ${spacingConfig.THREE};
-  margin-bottom: ${spacingConfig.THREE};
+  margin-top: ${spacingConfig.TWO};
+  margin-bottom: ${spacingConfig.TWO};
 `;
 
 const SummaryFormContainer = styled.div`
@@ -23,6 +23,10 @@ const SummaryFormContainer = styled.div`
     flex-flow: row;
     flex-wrap: wrap;
     justify-content: center;
+
+    & > li {
+      padding: ${spacingConfig.TWO};
+    }
   }
 `;
 
@@ -69,15 +73,13 @@ class ShippingForm extends Component {
       }
     }
 
-    const total = product.price + shipping;
-
     // TODO Fix responsive - card displays weird when stacked
     return (
       <PageContainer>
         <SummaryFormContainer>
           <HorizontalList spacing={HorizontalList.SPACING.TWO}>
             <HorizontalList.Item>
-              <ItemSummary name={product.name} price={product.price} shipping={shipping} total={total} />
+              {product && <ItemSummary name={product.name} price={product.price} shipping={shipping} total={product.price + shipping} />}
             </HorizontalList.Item>
             <HorizontalList.Item>
               <ShippingInfoForm

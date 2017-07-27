@@ -54,5 +54,6 @@ table {
 /* Global styles */
 html, body, #root {
   font-family: 'Roboto', sans-serif;
+  background-color: #e0e0e0;
   height: 100%;
 }

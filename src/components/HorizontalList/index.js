@@ -6,8 +6,8 @@ import spacingConfig from '../../config/spacing';
 import _ListItem from './_ListItem';
 
 const List = styled.ul`
-  & > li + li {
-    margin-left: ${props => props.spacing};
+  & > li {
+    margin-right: ${props => props.spacing};
   }
 `;
 

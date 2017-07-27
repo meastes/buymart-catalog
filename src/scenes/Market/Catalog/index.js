@@ -22,6 +22,10 @@ const ProductsContainer = styled.div`
     flex-flow: row;
     flex-wrap: wrap;
     justify-content: center;
+
+    & > li {
+      padding: ${spacingConfig.TWO};
+    }
   }
 `;
 
