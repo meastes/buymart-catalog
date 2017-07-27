@@ -1,10 +1,10 @@
 import React from 'react';
 import styled from 'styled-components';
 
-import config from '../../../config';
+import spacingConfig from '../../../config/spacing';
 
 const PageContainer = styled.div`
-  margin-top: ${config.spacing.TWO};
+  margin-top: ${spacingConfig.TWO};
   text-align: center;
   font-size: 18pt;
 `;

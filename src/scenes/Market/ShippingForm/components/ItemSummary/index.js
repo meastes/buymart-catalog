@@ -1,7 +1,7 @@
 import React from 'react';
 import styled from 'styled-components';
 
-import config from '../../../../../config';
+import spacingConfig from '../../../../../config/spacing';
 import { formatDollars } from '../../../../../util/formatters';
 
 import ItemContainer from '../../../../../components/ItemContainer';
@@ -9,7 +9,7 @@ import VerticalList from '../../../../../components/VerticalList';
 
 const PriceContainer = styled.div`
   font-size: 14pt;
-  margin-bottom: ${config.spacing.ONE};
+  margin-bottom: ${spacingConfig.ONE};
 `;
 
 const ItemSummary = props =>

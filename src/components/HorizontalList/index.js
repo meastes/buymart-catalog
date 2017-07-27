@@ -1,7 +1,7 @@
 import React from 'react';
 import styled from 'styled-components';
 
-import config from '../../config';
+import spacingConfig from '../../config/spacing';
 
 import _ListItem from './_ListItem';
 
@@ -22,9 +22,10 @@ const HorizontalList = (props) => {
 };
 
 HorizontalList.defaultProps = {
-  spacing: config.spacing.ONE,
+  spacing: spacingConfig.ONE,
 };
 
+HorizontalList.SPACING = spacingConfig;
 HorizontalList.Item = _ListItem;
 
 export default HorizontalList;

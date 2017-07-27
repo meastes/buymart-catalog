@@ -2,7 +2,7 @@ import React from 'react';
 import styled from 'styled-components';
 
 import _ListItem from './_ListItem';
-import config from '../../config';
+import spacingConfig from '../../config/spacing';
 
 const List = styled.ul`
   & > li + li {
@@ -21,9 +21,10 @@ const VerticalList = (props) => {
 };
 
 VerticalList.defaultProps = {
-  spacing: config.spacing.ONE,
+  spacing: spacingConfig.ONE,
 };
 
+VerticalList.SPACING = _ListItem;
 VerticalList.Item = _ListItem;
 
 export default VerticalList;

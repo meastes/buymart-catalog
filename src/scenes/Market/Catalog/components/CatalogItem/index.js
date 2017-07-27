@@ -4,7 +4,7 @@ import styled from 'styled-components';
 
 import RaisedButton from 'material-ui/RaisedButton';
 
-import config from '../../../../../config';
+import spacingConfig from '../../../../../config/spacing';
 import { formatDollars } from '../../../../../util/formatters';
 import styledMaterial from '../../../../../util/styledMaterial';
 
@@ -12,7 +12,7 @@ import ItemContainer from '../../../../../components/ItemContainer';
 
 const PriceContainer = styled.div`
   font-size: 14pt;
-  margin-bottom: ${config.spacing.TWO};
+  margin-bottom: ${spacingConfig.TWO};
 `;
 
 const FeatureList = styled.ul`

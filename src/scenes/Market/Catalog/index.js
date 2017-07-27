@@ -1,21 +1,21 @@
 import React from 'react';
 import styled from 'styled-components';
 
-import config from '../../../config';
+import spacingConfig from '../../../config/spacing';
 
 import HorizontalList from '../../../components/HorizontalList';
 import CatalogItem from './components/CatalogItem';
 
 const PageContainer = styled.div`
-  margin-top: ${config.spacing.THREE};
-  margin-bottom: ${config.spacing.THREE};
+  margin-top: ${spacingConfig.THREE};
+  margin-bottom: ${spacingConfig.THREE};
 
   text-align: center;
 `;
 
 const ProductsContainer = styled.div`
-  margin-top: ${config.spacing.TWO};
-  margin-bottom: ${config.spacing.TWO};
+  margin-top: ${spacingConfig.TWO};
+  margin-bottom: ${spacingConfig.TWO};
 
   & > ul {
     display: flex;
@@ -27,7 +27,7 @@ const ProductsContainer = styled.div`
 
 const ItemWrapper = styled.div`
   height: 100%;
-  padding-bottom: ${config.spacing.THREE};
+  padding-bottom: ${spacingConfig.THREE};
 
   & > * {
     position: relative;
@@ -48,7 +48,7 @@ export default (props) => {
   return (
     <PageContainer>
       <ProductsContainer>
-        <HorizontalList spacing={config.spacing.TWO}>
+        <HorizontalList spacing={HorizontalList.SPACING.TWO}>
           {productListItems}
         </HorizontalList>
       </ProductsContainer>

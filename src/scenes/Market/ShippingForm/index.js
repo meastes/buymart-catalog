@@ -2,7 +2,7 @@ import React, { Component } from 'react';
 import { withRouter } from 'react-router-dom';
 import styled from 'styled-components';
 
-import config from '../../../config';
+import spacingConfig from '../../../config/spacing';
 import { getAllUsStates } from '../../../services/api/usStates';
 
 import HorizontalList from '../../../components/HorizontalList';
@@ -10,13 +10,13 @@ import ItemSummary from './components/ItemSummary';
 import ShippingInfoForm from './components/ShippingInfoForm';
 
 const PageContainer = styled.div`
-  margin-top: ${config.spacing.THREE};
-  margin-bottom: ${config.spacing.THREE};
+  margin-top: ${spacingConfig.THREE};
+  margin-bottom: ${spacingConfig.THREE};
 `;
 
 const SummaryFormContainer = styled.div`
-  margin-top: ${config.spacing.TWO};
-  margin-bottom: ${config.spacing.TWO};
+  margin-top: ${spacingConfig.TWO};
+  margin-bottom: ${spacingConfig.TWO};
 
   & > ul {
     display: flex;
@@ -75,7 +75,7 @@ class ShippingForm extends Component {
     return (
       <PageContainer>
         <SummaryFormContainer>
-          <HorizontalList spacing={config.spacing.TWO}>
+          <HorizontalList spacing={HorizontalList.SPACING.TWO}>
             <HorizontalList.Item>
               <ItemSummary name={product.name} price={product.price} shipping={shipping} total={total} />
             </HorizontalList.Item>
