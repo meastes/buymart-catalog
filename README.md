@@ -40,9 +40,15 @@ __services/__ - Contains application business logic. Currently, only API helpers
 
 __util/__ - Contains utility functions used throughout the application.
 
+### Spacing Configuration
+Spacing increments is stored in a configuration file. This ensures spacing is consistent across the application. Additionally, spacing can be changed application-wide by modifying the base spacing increment in the configuration.
+
 ## Areas for Improvement
 * Documentation should be added where needed throughout the codebase. Documentation should follow the JSDoc standard.
 * Unit tests could be added to ensure stability. At a minimum, tests could ensure all components render successfully.
 * This project uses pure React state management. Although this is sufficient for an application of smaller scale, a state management framework like Redux should be added as the application grows in size.
 * Many components contain small presentational components within them (often via styled-components). It may make sense to split some of these out into their own files for readability and maintainability.
 * The API helpers have `localhost` hard-coded in the URL. This should be dependent on the server the application is running on. This could also be configurable for different staging or production systems.
+* Although the application does display well on mobile, the application isn't truly responsive - relative spacing doesn't adjust based on the window size. By using relative units, such as `em` or `vw`, a more fluid layout could be created.
+* Some elements of the visual design could be spruced up, such as the product information containers on the catalog page.
+* Some assets such as the favicon are still using the version included in `create-react-app`. These should be customized for the application.
