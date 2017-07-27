@@ -9,7 +9,7 @@ import ItemSummary from './components/ItemSummary';
 import ShippingInfoForm from './components/ShippingInfoForm';
 
 // TODO retrieve from API
-const usStates = [
+const usStateShippingData = [
   {
     name: 'Alabama',
     abbreviation: 'AL',
@@ -292,6 +292,7 @@ class ShippingForm extends Component {
     const { sku } = match.params;
 
     this.product = products.find(product => product.sku === sku);
+    this.usStates = usStateShippingData.map(stateData => stateData.abbreviation);
 
     this.state = {
       selectedUsState: null,
@@ -303,6 +304,7 @@ class ShippingForm extends Component {
   };
 
   onFormSubmit = () => {
+    // Normally we would save the form data to the server here
     this.props.history.push({ pathname: '/market/thanks' });
   };
 
@@ -312,7 +314,7 @@ class ShippingForm extends Component {
     let shipping = null;
     if (this.state.selectedUsState) {
       const selectedUsState = this.state.selectedUsState.toUpperCase();
-      const selectedStateData = usStates.find(usState => usState.abbreviation === selectedUsState);
+      const selectedStateData = usStateShippingData.find(usState => usState.abbreviation === selectedUsState);
       if (selectedStateData) {
         shipping = selectedStateData.shipping;
       }
@@ -329,7 +331,7 @@ class ShippingForm extends Component {
               <ItemSummary name={product.name} price={product.price} shipping={shipping} total={total} />
             </HorizontalList.Item>
             <HorizontalList.Item>
-              <ShippingInfoForm onUsStateChange={this.onUsStateChange} onFormSubmit={this.onFormSubmit} />
+              <ShippingInfoForm usStates={this.usStates} onUsStateChange={this.onUsStateChange} onFormSubmit={this.onFormSubmit} />
             </HorizontalList.Item>
           </HorizontalList>
         </SummaryFormContainer>

@@ -20,7 +20,7 @@ const ItemSummary = props =>
           Price: {formatDollars(props.price)}
         </VerticalList.Item>
         <VerticalList.Item>
-          Shipping & Handling: {formatDollars(props.shipping)}
+          Shipping & Handling: {props.shipping !== null ? formatDollars(props.shipping) : 'N/A'}
         </VerticalList.Item>
         <VerticalList.Item>
           <hr />
