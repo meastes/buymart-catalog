@@ -1,0 +1,30 @@
+{
+  "name": "buymart-catalog",
+  "version": "0.1.0",
+  "private": true,
+  "dependencies": {
+    "json-server": "^0.11.2",
+    "lodash": "^4.17.4",
+    "material-ui": "^0.18.7",
+    "react": "^15.6.1",
+    "react-dom": "^15.6.1",
+    "react-router-dom": "^4.1.2",
+    "react-scripts": "1.0.10",
+    "react-tap-event-plugin": "^2.0.1",
+    "styled-components": "^2.1.1"
+  },
+  "scripts": {
+    "start": "react-scripts start",
+    "start:api": "json-server --port 3001 --routes ./tools/json-server/routes.json --watch ./tools/json-server/db.json",
+    "build": "react-scripts build",
+    "test": "react-scripts test --env=jsdom",
+    "eject": "react-scripts eject",
+    "lint": "eslint ./src"
+  },
+  "devDependencies": {
+    "eslint-config-airbnb": "^15.1.0",
+    "eslint-plugin-import": "^2.7.0",
+    "eslint-plugin-jsx-a11y": "^5.1.1",
+    "eslint-plugin-react": "^7.1.0"
+  }
+}
