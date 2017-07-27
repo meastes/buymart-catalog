@@ -3,6 +3,7 @@
   "version": "0.1.0",
   "private": true,
   "dependencies": {
+    "json-server": "^0.11.2",
     "lodash": "^4.17.4",
     "material-ui": "^0.18.7",
     "react": "^15.6.1",
@@ -14,6 +15,7 @@
   },
   "scripts": {
     "start": "react-scripts start",
+    "start:api": "json-server --port 3001 --watch ./tools/db.json",
     "build": "react-scripts build",
     "test": "react-scripts test --env=jsdom",
     "eject": "react-scripts eject",
