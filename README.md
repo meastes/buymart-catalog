@@ -53,3 +53,4 @@ Spacing increments is stored in a configuration file. This ensures spacing is co
 * Some elements of the visual design could be spruced up, such as the product information containers on the catalog page.
 * Some assets such as the favicon are still using the version included in `create-react-app`. These should be customized for the application.
 * In order to override some Material UI styles, `!important` is required in some CSS styles. This will no longer be required in the 1.0 release of Material UI (currently in beta).
+* Additional validation could be done on the shipping form, which currently only checks for required fields and a valid US state.
