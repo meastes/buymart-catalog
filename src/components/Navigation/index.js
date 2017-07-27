@@ -1,4 +1,5 @@
 import React from 'react';
+import { withRouter } from 'react-router-dom';
 
 import Drawer from 'material-ui/Drawer';
 import MenuItem from 'material-ui/MenuItem';
@@ -10,9 +11,14 @@ const NavItem = styledMaterial(MenuItem, ['active'])`
 `;
 
 const Navigation = (props) => {
-  // TODO add hrefs
+  const onNavItemClick = item => () => {
+    if (item.href) {
+      props.history.push({ pathname: item.href });
+      props.onRequestClose();
+    }
+  };
   const navItems = props.items.map(item =>
-    (<NavItem key={item.title} active={item.active}>
+    (<NavItem key={item.title} active={item.active} onTouchTap={onNavItemClick(item)}>
       {item.title}
     </NavItem>),
   );
@@ -28,4 +34,4 @@ Navigation.defaultProps = {
   items: [],
 };
 
-export default Navigation;
+export default withRouter(Navigation);
