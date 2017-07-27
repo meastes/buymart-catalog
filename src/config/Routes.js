@@ -1,9 +1,9 @@
 import React from 'react';
 import { Route, Redirect } from 'react-router-dom';
 
-import Catalog from '../../scenes/Market/Catalog';
-import ShippingForm from '../../scenes/Market/ShippingForm';
-import ThankYou from '../../scenes/Market/ThankYou';
+import Catalog from '../scenes/Market/Catalog';
+import ShippingForm from '../scenes/Market/ShippingForm';
+import ThankYou from '../scenes/Market/ThankYou';
 
 export default (props) => {
   const ProductRoute = ({ component: Component, ...rest }) =>
