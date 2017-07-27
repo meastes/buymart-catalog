@@ -49,7 +49,7 @@ class CatalogItem extends Component {
               </li>),
             )}
         </FeatureList>
-        <BuyButton label="Buy" primary onTouchTap={this.onBuyClick} />
+        <BuyButton label="Buy" secondary onTouchTap={this.onBuyClick} />
       </ItemContainer>
     );
   }

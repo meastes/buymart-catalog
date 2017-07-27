@@ -5,12 +5,17 @@ import MuiThemeProvider from 'material-ui/styles/MuiThemeProvider';
 
 import Routes from './config/Routes';
 import navigationConfig from './config/navigation';
+import theme from './config/theme';
+
 import { getAllProducts } from './services/api/products';
 
 import Header from './components/Header';
 import Navigation from './components/Navigation';
 
-const AppContainer = styled.div`height: 100%;`;
+const AppContainer = styled.div`
+  height: 100%;
+  background-color: #e0e0e0;
+`;
 
 class App extends Component {
   constructor() {
@@ -36,7 +41,7 @@ class App extends Component {
 
   render() {
     return (
-      <MuiThemeProvider>
+      <MuiThemeProvider muiTheme={theme}>
         <Router>
           <AppContainer>
             <Header onRequestOpen={this.openNavigation} />

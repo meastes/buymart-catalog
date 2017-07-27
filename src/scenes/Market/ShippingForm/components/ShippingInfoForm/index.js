@@ -161,7 +161,7 @@ export default class ShippingInfoForm extends Component {
               </VerticalList.Item>
               <VerticalList.Item>
                 <ButtonWrapper>
-                  <RaisedButton label="Confirm" primary onTouchTap={this.onFormSubmit} />
+                  <RaisedButton label="Confirm" secondary onTouchTap={this.onFormSubmit} />
                 </ButtonWrapper>
               </VerticalList.Item>
             </VerticalList>
