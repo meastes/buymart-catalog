@@ -40,7 +40,6 @@ const ItemWrapper = styled.div`
 `;
 
 export default (props) => {
-  // TODO Fix responsive - card displays weird when stacked
   const productListItems = props.products.map(product =>
     (<HorizontalList.Item key={product.sku}>
       <ItemWrapper>

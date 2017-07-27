@@ -73,7 +73,6 @@ class ShippingForm extends Component {
       }
     }
 
-    // TODO Fix responsive - card displays weird when stacked
     return (
       <PageContainer>
         <SummaryFormContainer>
