@@ -4,10 +4,10 @@
 This is a small example webapp using React, Material UI, and styled-components.
 
 ## How to run
-1. Clone this repository.
-1. Install dependencies by running `npm install`.
-1. Start the API server by running `npm run start:api`.
-1. Start the web server in development mode by running `npm start`.
+1. Clone this repository
+1. Install dependencies by running `npm install`
+1. Start the API server by running `npm run start:api`
+1. Start the web server in development mode by running `npm start`
 
 ## Libraries & Tooling
 This application was bootstrapped using `create-react-app`, which provides an opinionated framework for building a React application. `create-react-app` includes tools and configuration that are common to most React applications.
